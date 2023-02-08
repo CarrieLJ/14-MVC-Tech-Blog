@@ -15,8 +15,8 @@
       <nav>
         {{#if logged_in}}
         {{!-- <a href="/blog">blog</a> --}}
-        <button class="no-button" id="home">Home</button>
-        <button href="/views/homepage.handlebars" class="no-button" id="dashboard">Dashboard</button>
+        <a class="btn btn-primary btn-lg mt-4" href="../homepage.handlebars" role="button" id="home">Home</a>
+        <a href="/views/homepage.handlebars" class="no-button" id="dashboard">Dashboard</button>
         <button class="no-button" href="/public/js/logout.js" id="logout">Logout</button>
         {{else}}
         {{!-- <a href="/login">login</a> --}}
