@@ -14,20 +14,18 @@
     <header class="display-flex justify-space-between align-center p-2">
       <nav>
         {{#if logged_in}}
-        <a href="/blog">blog</a>
+        {{!-- <a href="/blog">blog</a> --}}
         <button class="no-button" id="home">Home</button>
-        <button class="no-button" id="dashboard">Dashboard</button>
+        <button href="/blog" class="no-button" id="dashboard">Dashboard</button>
         <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/login">login</a>
+        {{!-- <a href="/login">login</a> --}}
         <button class="no-button" id="home">Home</button>
         <button class="no-button" id="dashboard">Dashboard</button>
         <button class="no-button" id="login">Login</button>
         {{/if}}
       </nav>
-      <h1>
-        <a href="/">The Tech Blog</a>
-      </h1>
+      <h1>The Tech Blog</h1>
     </header>
     <main class="container container-fluid mt-5">
       {{{ body }}}
