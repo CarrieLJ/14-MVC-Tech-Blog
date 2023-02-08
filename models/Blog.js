@@ -19,13 +19,6 @@ Blog.init(
     contents: {
       type: DataTypes.STRING,
     },
-    creator_username: {
-        type: DataTypes.STRING,
-        references: {
-            model: 'user',
-            key: 'name',
-        },
-    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
@@ -44,7 +37,7 @@ Blog.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'blog',
   }
 );
 
