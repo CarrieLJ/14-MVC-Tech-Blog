@@ -27,13 +27,13 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/blog/:id', async (req, res) => {
+router.get('/blogs/:id', async (req, res) => {
   try {
     const blogsData = await Blog.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ['id'],
         },
       ],
     });
@@ -47,6 +47,16 @@ router.get('/blog/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+router.get('/homepage', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('blogs');
 });
 
 router.get('/login', (req, res) => {

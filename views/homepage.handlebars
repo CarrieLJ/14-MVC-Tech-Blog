@@ -1,15 +1,13 @@
-<!-- Loop over each object in the projects array -->
-{{#each blog as |blog| }}
-<div class="row mb-4 blog">
-  <div class="col-md-5">
-    <h2>
-      <a href="/blog/{{blog.id}}">{{blog.title}}</a>
-    </h2>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{blog.contents}}
-    </p>
-  </div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <span></span>
+
+{{!-- <div>
+       {{#if session.logged_in}}
+       <a href="/dashboard" class="btn btn-info">Get Started</a>
+        {{else}}
+        <a href="/signup" class="btn btn-info">Get Started</a>
+        {{/if}}
+
+</div> --}}
 </div>
-{{/each}}

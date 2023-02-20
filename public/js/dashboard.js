@@ -13,7 +13,7 @@ async function getBlogs(event) {
 
     if (response.ok) {
     // If successful, redirect the browser to the main page
-        document.location.replace('/dashboard');           
+        document.location.replace('/homepage');           
     } else {
         alert(response.statusText);
     }

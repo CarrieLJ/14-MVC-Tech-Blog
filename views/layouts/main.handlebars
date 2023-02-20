@@ -14,9 +14,9 @@
       <nav>
         {{#if logged_in}}
         {{!-- <a href="/blog">blog</a> --}}
-        <a class="btn btn-primary btn-lg mt-4" href="../homepage.handlebars" role="button" id="home">Home</a>
-        <a href="/views/homepage.handlebars" class="no-button" id="dashboard">Dashboard</button>
-        <button class="no-button" href="/public/js/logout.js" id="logout">Logout</button>
+        <a class="btn btn-primary btn-lg mt-4" href="/home" role="button" id="home">Home</a>
+        <a class="btn btn-primary btn-lg mt-4" href="/dashboard" role="button" id="dashboard">Dashboard</a>
+        <button class="btn btn-primary btn-lg mt-4" href="/public/js/logout.js" id="logout">Logout</button>
         {{else}}
         {{!-- <a href="/login">login</a> --}}
         <a class="btn btn-primary btn-lg mt-4" id="home" href="/dashboard">Home</a>
