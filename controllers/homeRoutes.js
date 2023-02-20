@@ -40,7 +40,7 @@ router.get('/blogs/:id', async (req, res) => {
 
     const blogs = blogsData.get({ plain: true });
 
-    res.render('blogs', {
+    res.render('api/blogs', {
       ...blogs,
       logged_in: req.session.logged_in
     });
@@ -68,6 +68,16 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+// router.get('/dashboard', (req, res) => {
+//   // If the user is already logged in, redirect the request to another route
+//   if (req.session.logged_in) {
+//     res.redirect('/');
+//     return;
+//   }
+
+//   res.render('dashboard');
+// });
 
 router.get('/signup', (req, res) => {
   // If the user is already logged in, redirect the request to another route
