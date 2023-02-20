@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   const body = req.body;
   try {
     const newBlog = await Blog.create({
@@ -27,7 +27,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const blogData = await Blog.destroy({
       where: {
