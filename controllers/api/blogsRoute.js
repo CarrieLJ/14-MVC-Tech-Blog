@@ -14,6 +14,15 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/byuser', async (req, res)=> {
+  let allBlogsByUser = await BLog.findAll({
+    where: {user_id: req.session.user_id}
+  });
+  let blogData = allBlogsByUser.map((blog)=> blog.get({plain: true}));
+
+  res.render('userblogs', {blogData});
+});
+
 router.post('/', async (req, res) => {
   const body = req.body;
   try {
