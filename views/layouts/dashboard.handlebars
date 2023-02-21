@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,39 +9,47 @@
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
+    <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <nav>
-        {{#if logged_in}}
+        {{!-- {{#if logged_in}} --}}
         {{!-- <a href="/blog">blog</a> --}}
         <a class="btn btn-primary btn-lg mt-4" href="/" role="button" id="home">Home</a>
         <a class="btn btn-primary btn-lg mt-4" href="/dashboard" role="button" id="dashboard">Dashboard</a>
-        <button class="btn btn-primary btn-lg mt-4" href="/public/js/logout.js" id="logout">Logout</button>
-        {{else}}
+        //# an event listener
+        <button class="btn btn-primary btn-lg mt-4" href="#" id="logout">Logout</button>
+        {{!-- {{else}}
         {{!-- <a href="/login">login</a> --}}
         <a class="btn btn-primary btn-lg mt-4" id="home" href="/dashboard">Home</a>
         <a class="btn btn-primary btn-lg mt-4" id="blog" href="/blog">Dashboard</a>
-        <a class="btn btn-primary btn-lg mt-4" id="login" href="/login">Login</a>
-        {{/if}}
+        <a class="btn btn-primary btn-lg mt-4" id="login" href="/login">Login</a> --}}
+        {{!-- {{/if}} --}}
       </nav>
-      <h1>The Tech Blog</h1>
+      <h1 class="userDashboard"><a href = "/dashboard">Your Dashboard</a></h1>
     </header>
     <main class="container container-fluid mt-5">
       {{{ body }}}
     </main>
-    <footer>
+    <footer><a href = "/dashboard/addblog">➕ New Blog</a>
+
       
     </footer>
   </div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  {{!-- <script src="/js/mainPageListeners.js"></script> --}}
+ 
+  {{!-- {{#each blogData}}
+  {{/each}}
 
+<h2 class="display-4">Add a Blog</h2>
+<br>
+<form id="blog-submit-form">
+    <input id="title" class="form-control" type="text">
+    <br>
+    <input id="content" class="form-control" type="text">
+    <br>
+    <button type="submit" class="btn btn-info">Submit Blog</button>
+</form> --}}
+<script src="/js/logout.js"></script>
 </body>
-
 </html>

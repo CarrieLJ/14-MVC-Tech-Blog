@@ -1,6 +1,6 @@
 //dashboard
 const dashboardLink = document.querySelector('#dashboard');
-dashboardLink.addEventListener('click', function goTodashboard () {
+dashboardLink.addEventListener('click', function() {
     document.location.replace('/dashboard');
 });
 

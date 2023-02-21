@@ -1,3 +1,5 @@
+//editing
+
 const addBlog = async (event) => {
     event.preventDefault();
     const title = document.querySelector('#title').value.trim();
