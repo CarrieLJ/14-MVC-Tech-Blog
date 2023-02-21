@@ -20,7 +20,7 @@ router.get('/byuser', async (req, res)=> {
   });
   let blogData = allBlogsByUser.map((blog)=> blog.get({plain: true}));
 
-  res.render('userblogs', {blogData});
+  res.render('dashboard', {blogData});
 });
 
 router.post('/addnew', async (req, res) => {

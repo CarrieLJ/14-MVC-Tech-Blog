@@ -40,7 +40,7 @@ router.get('/blogs/:id', async (req, res) => {
 
     const blogs = blogsData.get({ plain: true });
 
-    res.render('api/blogs', {
+    res.render('homepage', {
       ...blogs,
       logged_in: req.session.logged_in
     });
@@ -56,7 +56,7 @@ router.get('/homepage', (req, res) => {
     return;
   }
 
-  res.render('blogs');
+  res.render('homepage');
 });
 
 router.get('/login', (req, res) => {
