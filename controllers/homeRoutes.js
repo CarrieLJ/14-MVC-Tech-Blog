@@ -4,7 +4,6 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
     const blogsData = await Blog.findAll({
       include: [
         {
@@ -16,8 +15,6 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const blogs = blogsData.map((blogs) => blogs.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
     res.render('homepage', { 
       blogs, 
       logged_in: req.session.logged_in 
@@ -50,7 +47,6 @@ router.get('/blogs/:id', async (req, res) => {
 });
 
 router.get('/homepage', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/');
     return;
@@ -60,7 +56,6 @@ router.get('/homepage', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/');
     return;
@@ -70,7 +65,6 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/dashboard', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/');
     return;
@@ -83,7 +77,6 @@ router.get('/dashboard', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/');
     return;

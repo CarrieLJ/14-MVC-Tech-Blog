@@ -2,26 +2,6 @@ const router = require('express').Router();
 const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// router.get('/', async (req, res) => {
-//   try {
-//     const allBlogs = await Blog.findAll({
-//       include: [{ model: User }]
-//     });
-//     res.status(200).json(allBlogs);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// router.get('/blog', async (req, res)=> {
-//   let allBlogsByUser = await BLog.findAll({
-//     where: {user_id: req.session.user_id}
-//   });
-//   let blogData = allBlogsByUser.map((blog)=> blog.get({plain: true}));
-
-//   res.render('dashboard', {blogData});
-// });
-
 router.post('/', withAuth, async (req, res) => {
   const body = req.body;
   try {
@@ -72,6 +52,5 @@ router.put('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 module.exports = router;

@@ -10,3 +10,12 @@ router.get('/', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/blog', withAuth, async (req, res)=> {
+  let allBlogsByUser = await Blog.findAll({
+    // where: {user_id: req.session.user_id}
+  });
+  let blogData = allBlogsByUser.map((blog)=> blog.get({plain: true}));
+
+  res.render('dashboard', {blogData});
+});
