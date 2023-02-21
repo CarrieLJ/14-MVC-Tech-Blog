@@ -23,7 +23,7 @@ router.get('/byuser', async (req, res)=> {
   res.render('userblogs', {blogData});
 });
 
-router.post('/', async (req, res) => {
+router.post('/addnew', async (req, res) => {
   const body = req.body;
   try {
     const newBlog = await Blog.create({
