@@ -8,10 +8,12 @@ NA
 
 ## Usage
 When you are presented with the homepage, you are able to see blogs posted by other users. In order to add your own posts or make comments, you will need to create an account. Sign up with a username and password. You will have your own dashboard that shows your blog posts. 
+
 ![signup](https://user-images.githubusercontent.com/114967552/221086652-92ea08ca-7de3-42cf-a010-f4bb6a0de201.JPG)
 
 ## Credits
 https://umn.bootcampcontent.com/University-of-Minnesota-Boot-Camp/UofM-VIRT-FSF-PT-10-2022-U-LOLC/-/tree/main/14-MVC/01-Activities/28-Stu_Mini-Project
+https://github.com/llangerud/did-i-need-that
 
 ## License
 MIT License
